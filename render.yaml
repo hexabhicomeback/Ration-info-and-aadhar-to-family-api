@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: impds-family-api
+    runtime: python
+    repo: https://github.com/YOUR_USERNAME/impds-family-api
+    plan: free
+    branch: main
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:3000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: IMPDS_USERNAME
+        value: adminWB
+      - key: IMPDS_PASSWORD
+        value: 2p3MrgdgV8s9
+      - key: ENCRYPTION_KEY
+        value: nic@impds#dedup05613
